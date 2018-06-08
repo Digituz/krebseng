@@ -1,0 +1,16 @@
+export default [
+  { title: 'Villa Ravenna Residencial', image: '/static/images/image-28.png', address: 'Rua S&atilde;o Sim&atilde;o, 99', neighbour: 'Bairro Bom Jesus', completionDate: '01/2016' },
+  { title: 'Residencial Villaggio Sorrento', image: '/static/images/image-24.png', address: 'Rua Domingos Cresc&ecirc;ncio, 965', neighbour: 'Bairro Santana', completionDate: '01/2014' },
+  { title: 'Residencial Villaggio Monte Bianco', image: '/static/images/image-5.png', address: 'Rua Toropi, 111', neighbour: 'Bairro Petrópolis ', completionDate: '12/2010' },
+  { title: 'Residencial Estrela Adhara', image: '/static/images/image-14.png', address: 'Rua Professor Fitzgerald, 189 ', neighbour: 'Bairro Petrópolis', completionDate: '02/2008' },
+  { title: 'Residencial 25 de julho', image: '/static/images/image-15.png', address: 'Rua Marcelo Gama, 1001', neighbour: 'Bairro Higienópolis', completionDate: '02/2007' },
+  { title: 'Residencial Cônego Viana', image: '/static/images/image-16.png', address: 'Rua C&ocirc;nego Viana, 78 ', neighbour: 'Bairro Rio Branco', completionDate: '30/04/2005' },
+  { title: 'Residencial da Figueira', image: '/static/images/image-9.png', address: 'Travessa da Sa&uacute;de, 92 ', neighbour: 'Bairro Auxiliadora', completionDate: '30/08/2004' },
+  { title: 'Residencial Villa Franca Di Verona', image: '/static/images/image-8.png', address: 'Rua Luiz Manoel Gonzaga, 100 ', neighbour: 'Bairro Petrópolis', completionDate: '30/12/2003' },
+  { title: 'Residencial Lago di Garda', image: '/static/images/image-17.png', address: 'Rua Marcelo Gama, 1189', neighbour: 'Bairro Higienópolis', completionDate: '30/04/2002' },
+  { title: 'Residencial Cortina D`Ampezzo', image: '/static/images/image-20.png', address: 'Rua Mariz e Barros, 392', neighbour: 'Bairro Petrópolis', completionDate: '30/11/2001' },
+  { title: 'Residencial Isidoro Tressi', image: '/static/images/image-21.png', address: 'Rua Isidoro Tressi, 556', neighbour: 'Bairro Jardim Botânico', completionDate: '09/2000' },
+  { title: 'Residencial Condado de San Lorenzo', image: '/static/images/image-22.png', address: 'Rua Jo&atilde;o Caetano, 53', neighbour: 'Bairro Petrópolis', completionDate: '06/1997' },
+  { title: 'Residencial Itaúba', image: '/static/images/image-23.png', address: 'Avenida Palmeira, 660', neighbour: 'Bairro Petrópolis', completionDate: '07/1994' },
+  { title: 'Sede Krebs Engenharia Ltda', image: '/static/images/image-19.png', address: 'Rua Souza Lobo 666', neighbour: 'Bairro Vila Jardim', completionDate: '' },
+]
