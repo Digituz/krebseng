@@ -18,6 +18,7 @@ export default class MyDocument extends Document {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link rel="shortcut icon" href="/static/favicon.png" />
         <link rel="stylesheet" href="/static/index.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
         {this.props.styleTags}
       </Head>
       <body>
