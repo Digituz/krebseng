@@ -15,6 +15,7 @@ const Buildings = styled(Content)`
     border: none;
     margin-top: -20px;
     margin-bottom: -20px;
+    box-shadow: none;
     
     h1 {
       margin-bottom: 10px;
@@ -30,6 +31,8 @@ const Buildings = styled(Content)`
     width: 100%;
     border: 1px solid #ddd;
     border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 10px;
     
     h2 {
       font-size: 16px;
