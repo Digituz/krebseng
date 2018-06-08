@@ -9,6 +9,22 @@ const Buildings = styled(Content)`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
   
+  div.description {
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    border: none;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    
+    h1 {
+      margin-bottom: 10px;
+    }
+    
+    p {
+      margin: 10px 0 16px 0;
+    }
+  }
+  
   > div {
     display: inline-block;
     width: 100%;
@@ -31,10 +47,20 @@ const Buildings = styled(Content)`
   
   @media (max-width: 500px) {
     grid-template-columns: 1fr;
+    
+    div.description {
+      grid-column-start: 1;
+      grid-column-end: span 1;
+    }
   }
   
   @media (min-width: 501px) and (max-width: 700px) {
     grid-template-columns: 1fr 1fr;
+    
+    div.description {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+    }
   }
 `;
 
@@ -43,6 +69,10 @@ function index() {
     <div>
       <Header />
       <Buildings>
+        <div className="description">
+          <h1>Empreendimentos</h1>
+          <p>Conheça os empreendimentos já entregues pela Krebs Engenharia.</p>
+        </div>
         {
           buildings.map(building => (
             <div>

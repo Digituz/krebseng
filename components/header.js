@@ -5,7 +5,9 @@ import Content from '../components/content';
 const HeaderSection = styled.section`
   margin: 0 auto 0;
   height: 350px;
-  background: url(/static/topo.jpg) repeat-x;
+  background: url(/static/topo.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
   
   h1 {
     margin: 0;
