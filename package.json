@@ -1,25 +1,35 @@
 {
   "name": "krebseng",
   "version": "1.0.0",
-  "description": "",
+  "description": "Site da Krebs Engenharia",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "next build",
+    "deploy": "now -e NODE_ENV=production -t $NOW_TOKEN",
+    "dev": "node server.js",
+    "start": "NODE_ENV=production node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/digituz-corp/krebseng.git"
   },
-  "keywords": [],
+  "keywords": [
+    "website",
+    "react",
+    "next.js"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/digituz-corp/krebseng/issues"
   },
   "homepage": "https://github.com/digituz-corp/krebseng#readme",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
+    "express": "^4.16.3",
     "next": "^6.0.3",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react-dom": "^16.4.0",
+    "styled-components": "^3.3.2"
   }
 }
