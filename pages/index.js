@@ -45,6 +45,8 @@ const Buildings = styled(Content)`
       width: 100%;
       height: 150px;
       object-fit: cover;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
     }
   }
   
