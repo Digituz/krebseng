@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Content from './content';
+import Link from './link';
 
 const Menu = styled.section`
   background-color: #222;
@@ -28,9 +29,9 @@ export default function() {
     <Menu>
       <ContentMenu>
         <ul>
-          <li>Início</li>
-          <li>Empreendimentos</li>
-          <li>Contato</li>
+          <li><Link href="/">Início</Link></li>
+          <li><Link href="/building">Empreendimentos</Link></li>
+          <li><Link href="/">Contato</Link></li>
         </ul>
       </ContentMenu>
     </Menu>
