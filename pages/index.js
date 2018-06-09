@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import Header from '../components/header';
+import Menu from '../components/menu';
 import Content from '../components/content';
 import buildings from '../data/buildings';
 
@@ -73,6 +74,7 @@ function index() {
   return (
     <div>
       <Header />
+      <Menu />
       <Buildings>
         <div className="description">
           <h1>Empreendimentos</h1>
