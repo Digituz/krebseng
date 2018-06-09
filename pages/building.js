@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import Content from '../components/content';
+import Description from '../components/description';
+import Footer from '../components/footer';
 import Header from '../components/header';
+import Menu from '../components/menu';
 
 const Carousel = styled.div`
   display: grid;
@@ -21,6 +24,11 @@ export default function() {
   return (
     <div>
       <Header />
+      <Menu />
+      <Description>
+        <h1>Residencial Villaggio Sorrento</h1>
+        <p>Rua Domingos Crescêncio, 965 - Santana</p>
+      </Description>
       <Content>
         <Carousel>
           <img src="http://www.krebseng.com.br/painel/include/arquivos/10/fotos/20110111175854.jpg"/>
@@ -30,6 +38,7 @@ export default function() {
           <img src="http://www.krebseng.com.br/painel/include/arquivos/10/fotos/20110120120116.jpg"/>
         </Carousel>
       </Content>
+      <Footer />
     </div>
 
   );
