@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
+import Footer from '../components/footer';
 import Header from '../components/header';
 import Menu from '../components/menu';
 import Content from '../components/content';
@@ -89,6 +90,7 @@ function index() {
           ))
         }
       </Buildings>
+      <Footer />
     </div>
   );
 }
