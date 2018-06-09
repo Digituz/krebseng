@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {getImage} from '../data/buildings';
 
 const BuildingCardContainer = styled.div`
   display: inline-block;
@@ -28,7 +29,7 @@ const BuildingCardContainer = styled.div`
 export default function(props) {
   return (
     <BuildingCardContainer>
-      <img src={props.building.image} alt={props.building.title} />
+      <img src={getImage(props.building)} alt={props.building.title} />
       <h2>{props.building.title}</h2>
     </BuildingCardContainer>
   );
