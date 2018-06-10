@@ -1,9 +1,11 @@
+import {withRouter} from 'next/router'
 import styled from 'styled-components';
 import Content from '../components/content';
 import Description from '../components/description';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import Menu from '../components/menu';
+import buildings from '../data/buildings';
 
 const Carousel = styled.div`
   display: grid;
@@ -20,14 +22,16 @@ const Carousel = styled.div`
   }
 `;
 
-export default function() {
+export default withRouter((props) => {
+  const { path } = props.router.query;
+  const building = buildings.find(b => (b.path === path));
   return (
     <div>
       <Header />
       <Menu />
       <Description>
-        <h1>Residencial Villaggio Sorrento</h1>
-        <p>Rua Domingos Crescêncio, 965 - Santana</p>
+        <h1>{building.title}</h1>
+        <p>{building.address}</p>
       </Description>
       <Content>
         <Carousel>
@@ -40,6 +44,5 @@ export default function() {
       </Content>
       <Footer />
     </div>
-
   );
-}
+});

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import React from 'react';
 import BuildingCard from '../components/building-card';
@@ -32,7 +33,15 @@ function index() {
         <p>Conheça os empreendimentos já entregues pela Krebs Engenharia.</p>
       </Description>
       <Buildings>
-        { buildings.map(building => (<BuildingCard building={building} />)) }
+        {
+          buildings.map(building => (
+            <Link as={`/empreendimentos/${building.path}`} href={`/building?path=${building.path}`}>
+              <a>
+                <BuildingCard building={building} />
+              </a>
+            </Link>
+          ))
+        }
       </Buildings>
       <Footer />
     </div>
