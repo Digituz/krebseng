@@ -1,6 +1,8 @@
 const Koa = require('koa');
 const next = require('next');
 const Router = require('koa-router');
+const GenericRouter  = require('@digituz/rest-flex');
+const cors = require('kcors');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -9,6 +11,19 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = new Koa();
   const router = new Router();
+
+  router.use(cors());
+
+  const domain = 'buildings';
+  const auth0Domain = 'digituz-corp.auth0.com';
+  const auth0Audience = 'https://buildings.krebseng.com.br';
+  const publicRead = true;
+  const publicWrite = false;
+  const mongoDBUrl = process.env.MONGO_URL;
+
+  const buildings = GenericRouter({ domain, auth0Domain, auth0Audience, mongoDBUrl, publicRead, publicWrite });
+
+  router.use('/buildings', buildings.routes());
 
   router.get('/empreendimentos/:path', async ctx => {
     const actualPage = '/building';

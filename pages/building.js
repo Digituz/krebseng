@@ -1,3 +1,4 @@
+import RestFlexClient from '@digituz/rest-flex-client';
 import {withRouter} from 'next/router'
 import styled from 'styled-components';
 import Content from '../components/content';
@@ -11,7 +12,7 @@ const Carousel = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
-  
+
   img {
     width: 100%;
     height: 150px;
@@ -22,9 +23,8 @@ const Carousel = styled.div`
   }
 `;
 
-export default withRouter((props) => {
-  const { path } = props.router.query;
-  const building = buildings.find(b => (b.path === path));
+const Building = (props) => {
+  const { building } = props;
   return (
     <div>
       <Header />
@@ -45,4 +45,17 @@ export default withRouter((props) => {
       <Footer />
     </div>
   );
-});
+};
+
+Building.getInitialProps = async function(context) {
+  const client = new RestFlexClient('http://localhost:3000/buildings');
+  const { path } = context.query;
+  const res = await client.find({ path });
+  const buildings = await res.json();
+
+  return {
+    building: buildings[0],
+  }
+}
+
+export default withRouter(Building);
