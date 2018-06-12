@@ -20,7 +20,6 @@ app.prepare().then(() => {
   const publicRead = true;
   const publicWrite = false;
   const mongoDBUrl = process.env.MONGO_URL;
-  console.log({ domain, auth0Domain, auth0Audience, mongoDBUrl, publicRead, publicWrite });
 
   const buildings = GenericRouter({ domain, auth0Domain, auth0Audience, mongoDBUrl, publicRead, publicWrite });
 
