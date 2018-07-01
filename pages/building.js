@@ -56,6 +56,6 @@ Building.getInitialProps = async function(context) {
   return {
     building: buildings[0],
   }
-}
+};
 
 export default withRouter(Building);
