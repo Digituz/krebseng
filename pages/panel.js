@@ -1,8 +1,8 @@
-import Auth0Web from 'auth0-web';
 import {withRouter} from 'next/router';
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import Building from '../entities/Building';
 import * as Components from '@digituz/react-components';
+import withPanelTemplate from '../components/withPanelTemplate';
 import withUser from '../components/withUser';
 
 class Panel extends Component {
@@ -18,6 +18,10 @@ class Panel extends Component {
         authenticated,
       });
     });
+  }
+
+  go(url) {
+    this.props.router.push(url);
   }
 
   signIn() {
@@ -42,42 +46,24 @@ class Panel extends Component {
     const submenus = [{
       title: 'Menu',
       items: [
-        { title: 'Painel', color: '#e6665b', onClick: () => { guardedRoute('/painel') } },
-        { title: 'Empreendimentos', color: '#66ad66', onClick: () => { guardedRoute('/empreendimentos') } },
+        { title: 'Buildings', color: '#66ad66', onClick: () => { guardedRoute('/buildings') } },
       ]
     }];
 
     Building.url = 'http://localhost:3000/';
 
-    const routes = [
-      { model: Building, tableColumns: ['startedAt', 'title', 'budget'], key: Building.path },
-    ];
-
     return (
-      <Components.Panel>
-        <Components.PanelHeader>
-          <div style={divStyle}>
-            <Components.VerticalMenu submenus={submenus} />
-            <h1 onClick={() => { this.go('/') }}>Krebs Eng</h1>
-            <div className="horizontal-menu">
-              <Components.If condition={!this.props.auth0Client.isAuthenticated()}>
-                <Components.Button onClick={() => { this.signIn() }} text="Sign In" />
-              </Components.If>
-              <Components.If condition={this.props.auth0Client.isAuthenticated()}>
-                <Components.Button onClick={() => { this.signOut() }} text="Sign Out" />
-              </Components.If>
-            </div>
-          </div>
-        </Components.PanelHeader>
-        <Components.PanelBody>
-          {/*{routes.map((route) => (*/}
-          {/*<Components.RestFlexRoute {...route} auth0Config={auth0Client} />*/}
-          {/*))}*/}
-        </Components.PanelBody>
-        <Components.NotificationContainer />
-      </Components.Panel>
+      <Fragment>
+        <Components.Card className="md-6 md-pad-3" title="Krebs Engenharia">
+          <h2>Seja bem-vindo.</h2>
+          <p>
+            Este é o sistema de gerenciamento da Krebs Engenharia. Para utilizá-lo, você deve estar logado.
+            Se você já estiver logado, utilize o menu vertical para ir para alguma seção.
+          </p>
+        </Components.Card>
+      </Fragment>
     );
   }
 }
 
-export default withRouter(withUser(Panel));
+export default withRouter(withUser(withPanelTemplate(Panel)));

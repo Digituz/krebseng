@@ -1,29 +1,22 @@
 {
-  "path": "/companies",
+  "path": "/buildings",
   "audience": "https://companies.digituz.com.br",
-  "domain": "companies",
-  "title": "Company",
-  "plural": "Companies",
-  "description": "Create and manage companies with ease.",
+  "domain": "buildings",
+  "title": "Building",
+  "plural": "Buildings",
+  "description": "Create and manage buildings with ease.",
   "type": "object",
   "properties": {
-    "companyName": {
+    "buildingName": {
       "type": "string",
-      "label": "Company Name",
-      "placeholder": "Enter the company name.",
+      "label": "Building Name",
+      "placeholder": "Enter the building name.",
       "max": "100"
     },
-    "tradingName": {
-      "type": "string",
-      "label": "Trading Name",
-      "placeholder": "Enter the trade name of the company.",
-      "max": "100"
-    },
-    "phoneNumber": {
-      "type": "string",
-      "label": "Phone Number",
-      "placeholder": "The main phone number of the company.",
-      "max": "50"
+    "completionDate": {
+      "type": "date",
+      "label": "Completion Date",
+      "placeholder": "Enter the date the building was completed."
     },
     "address": {
       "type": "string",
@@ -31,10 +24,10 @@
       "placeholder": "Enter the address of the company.",
       "max": "250"
     },
-    "logo": {
+    "pictures": {
       "type": "file",
-      "label": "Logo"
+      "label": "Pictures"
     }
   },
-  "required": ["companyName", "tradingName", "phoneNumber"]
+  "required": ["buildingName", "completionDate", "address"]
 }
