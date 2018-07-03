@@ -1,6 +1,7 @@
+import * as Components from '@digituz/react-components';
 import React, {Component} from 'react';
 import Building from '../entities/Building';
-import * as Components from '@digituz/react-components';
+import Loading from '../components/loading';
 
 function withPanelTemplate(WrappedComponent) {
   return class extends Component {
@@ -8,13 +9,20 @@ function withPanelTemplate(WrappedComponent) {
       super(props);
 
       this.state = {
-        authenticated: false,
+        checkingSession: !this.props.auth0Client.isAuthenticated(),
       };
+    }
 
-      props.auth0Client.subscribe((authenticated) => {
-        this.setState({
-          authenticated,
+    async componentDidMount() {
+      if (this.props.auth0Client.isAuthenticated()) {
+        return this.setState({
+          checkingSession: false,
         });
+      }
+
+      await this.props.auth0Client.checkSession();
+      this.setState({
+        checkingSession: false,
       });
     }
 
@@ -49,6 +57,8 @@ function withPanelTemplate(WrappedComponent) {
       }];
 
       Building.url = 'http://localhost:3000/';
+
+      if (this.state.checkingSession) return <Loading message="Checking Session" />;
 
       return (
         <Components.Panel>
