@@ -10,9 +10,16 @@ const auth0Client = new Auth0Web({
 });
 
 function withUser(WrappedComponent) {
-  return function(props) {
+  function wrappedWithUser(props) {
     return <WrappedComponent auth0Client={auth0Client} {...props} />;
   }
+
+  wrappedWithUser.getInitialProps = async function(context) {
+    if (WrappedComponent.getInitialProps) return WrappedComponent.getInitialProps(context);
+    return {};
+  };
+
+  return wrappedWithUser;
 }
 
 export default withUser;

@@ -13,6 +13,13 @@ function withPanelTemplate(WrappedComponent) {
       };
     }
 
+    static getInitialProps(context) {
+      if (WrappedComponent.getInitialProps) {
+        return WrappedComponent.getInitialProps(context);
+      }
+      return null;
+    }
+
     async componentDidMount() {
       if (this.props.auth0Client.isAuthenticated()) {
         return this.setState({
