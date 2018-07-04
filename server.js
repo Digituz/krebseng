@@ -32,6 +32,13 @@ app.prepare().then(() => {
     ctx.respond = false;
   });
 
+  router.get('/panel/buildings/:path', async ctx => {
+    const actualPage = '/panel/buildings';
+    const queryParams = { path: ctx.params.path };
+    await app.render(ctx.req, ctx.res, actualPage, queryParams);
+    ctx.respond = false;
+  });
+
   router.get('*', async ctx => {
     await handle(ctx.req, ctx.res);
     ctx.respond = false;
