@@ -1,5 +1,5 @@
 {
-  "path": "/buildings",
+  "path": "/panel/buildings",
   "audience": "https://companies.digituz.com.br",
   "domain": "buildings",
   "title": "Building",
@@ -7,7 +7,7 @@
   "description": "Create and manage buildings with ease.",
   "type": "object",
   "properties": {
-    "buildingName": {
+    "title": {
       "type": "string",
       "label": "Building Name",
       "placeholder": "Enter the building name.",
