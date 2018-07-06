@@ -15,7 +15,7 @@ app.prepare().then(() => {
   router.use(cors());
 
   const domain = 'buildings';
-  const auth0Domain = 'digituz-corp.auth0.com';
+  const auth0Domain = 'krebseng.auth0.com';
   const auth0Audience = 'https://buildings.krebseng.com.br';
   const publicRead = true;
   const publicWrite = false;
@@ -32,10 +32,11 @@ app.prepare().then(() => {
     ctx.respond = false;
   });
 
-  router.get('/panel/buildings/:path', async ctx => {
+  router.get('/panel/buildings/:id', async ctx => {
     const actualPage = '/panel/buildings';
-    const queryParams = { path: ctx.params.path };
+    const queryParams = { id: ctx.params.id };
     await app.render(ctx.req, ctx.res, actualPage, queryParams);
+    ctx.res.statusCode = 200;
     ctx.respond = false;
   });
 

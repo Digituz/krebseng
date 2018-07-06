@@ -1,12 +1,12 @@
 import Auth0Web from 'auth0-web';
 
 const auth0Client = new Auth0Web({
-  domain: 'digituz-corp.auth0.com',
+  domain: 'krebseng.auth0.com',
   audience: 'https://buildings.krebseng.com.br',
-  clientID: '5gE2aHDLEvYW06AuTrjIiBzTLrBGcFPs',
-  redirectUri: `http://localhost:3000/callback`,
+  clientID: 'pcjhQ2kzJzT5PwxbjIbe4GmgGSKxUjOG',
+  redirectUri: `https://www.krebseng.com.br/callback`,
   responseType: 'token id_token',
-  scope: 'openid profile'
+  scope: 'openid profile get:buildings delete:buildings post:buildings put:buildings'
 });
 
 function withUser(WrappedComponent) {

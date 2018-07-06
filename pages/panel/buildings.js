@@ -6,24 +6,30 @@ import withUser from '../../components/withUser';
 
 const Buildings = (props) => {
   const tableColumns = ['title'];
-  Building.url = 'http://localhost:3000/buildings';
+  Building.url = 'https://www.krebseng.com.br/buildings';
+
+  const navigate = (path, id) => {
+    if (!id) return props.router.push(path);
+    props.router.push(`${path}?id=${id}`, `${path}/${id}`);
+  };
 
   return (
     <Components.RestFlexRoute
-      auth0Config={props.auth0Client.getProperties()}
+      accessToken={props.auth0Client.getAccessToken()}
+      entityId={props.buildingId}
+      goBack={props.router.back}
       model={Building}
       tableColumns={tableColumns}
-      showList={!props.buildingId}
-      pushUrl={props.router.push}
+      navigate={navigate}
     />
   );
 };
 
 Buildings.getInitialProps = async function(context) {
-  const { path } = context.query;
+  const { id } = context.query;
 
   return {
-    buildingId: path,
+    buildingId: id,
   }
 };
 

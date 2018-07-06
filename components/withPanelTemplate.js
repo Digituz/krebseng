@@ -17,7 +17,7 @@ function withPanelTemplate(WrappedComponent) {
       if (WrappedComponent.getInitialProps) {
         return WrappedComponent.getInitialProps(context);
       }
-      return null;
+      return {};
     }
 
     async componentDidMount() {
@@ -42,7 +42,7 @@ function withPanelTemplate(WrappedComponent) {
     }
 
     signOut() {
-      this.props.auth0Client.signOut('http://localhost:3000');
+      this.props.auth0Client.signOut('https://www.krebseng.com.br');
     }
 
     render() {
@@ -63,7 +63,7 @@ function withPanelTemplate(WrappedComponent) {
         ]
       }];
 
-      Building.url = 'http://localhost:3000/';
+      Building.url = 'https://www.krebseng.com.br/';
 
       if (this.state.checkingSession) return <Loading message="Checking Session" />;
 
