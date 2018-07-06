@@ -1,5 +1,6 @@
 import * as Components from '@digituz/react-components';
 import React, {Component} from 'react';
+import config from '../config';
 import Building from '../entities/Building';
 import Loading from '../components/loading';
 
@@ -42,7 +43,7 @@ function withPanelTemplate(WrappedComponent) {
     }
 
     signOut() {
-      this.props.auth0Client.signOut('https://www.krebseng.com.br');
+      this.props.auth0Client.signOut(config.domain);
     }
 
     render() {
@@ -63,7 +64,7 @@ function withPanelTemplate(WrappedComponent) {
         ]
       }];
 
-      Building.url = 'https://www.krebseng.com.br/';
+      Building.url = config.domain;
 
       if (this.state.checkingSession) return <Loading message="Checking Session" />;
 

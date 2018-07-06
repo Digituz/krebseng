@@ -1,12 +1,13 @@
 import * as Components from '@digituz/react-components';
 import {withRouter} from 'next/router';
+import config from '../../config';
 import Building from '../../entities/Building';
 import withPanelTemplate from '../../components/withPanelTemplate';
 import withUser from '../../components/withUser';
 
 const Buildings = (props) => {
   const tableColumns = ['title'];
-  Building.url = 'https://www.krebseng.com.br/buildings';
+  Building.url = `${config.domain}/buildings`;
 
   const navigate = (path, id) => {
     if (!id) return props.router.push(path);

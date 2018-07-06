@@ -26,9 +26,9 @@
   },
   "homepage": "https://github.com/digituz-corp/krebseng#readme",
   "dependencies": {
-    "@digituz/react-components": "^1.4.0",
-    "@digituz/rest-flex": "^2.0.4",
-    "@digituz/rest-flex-client": "^2.0.1",
+    "@digituz/react-components": "^1.4.1",
+    "@digituz/rest-flex": "^2.0.5",
+    "@digituz/rest-flex-client": "^2.0.3",
     "@zeit/next-css": "^0.2.0",
     "auth0-web": "^2.3.0",
     "babel-plugin-styled-components": "^1.5.1",
