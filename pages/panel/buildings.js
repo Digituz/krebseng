@@ -1,9 +1,12 @@
 import * as Components from '@digituz/react-components';
+import getConfig from 'next/config';
 import {withRouter} from 'next/router';
 import config from '../../config';
 import Building from '../../entities/Building';
 import withPanelTemplate from '../../components/withPanelTemplate';
 import withUser from '../../components/withUser';
+
+const {spacesAccessKey, spacesSecretKey} = getConfig().publicRuntimeConfig;
 
 const Buildings = (props) => {
   const tableColumns = ['title'];
@@ -14,6 +17,13 @@ const Buildings = (props) => {
     props.router.push(`${path}?id=${id}`, `${path}/${id}`);
   };
 
+  const fileManagerConfig = {
+    accessKeyId: spacesAccessKey,
+    bucketName: 'krebseng',
+    endpoint: 'nyc3.digitaloceanspaces.com',
+    secretAccessKey: spacesSecretKey,
+  };
+
   return (
     <Components.RestFlexRoute
       accessToken={props.auth0Client.getAccessToken()}
@@ -22,6 +32,7 @@ const Buildings = (props) => {
       model={Building}
       tableColumns={tableColumns}
       navigate={navigate}
+      fileManagerConfig={fileManagerConfig}
     />
   );
 };

@@ -26,12 +26,12 @@ The continuous deployment practice is achieved with the help of [Travis](https:/
 
 ### Technical Details
 
-If you take a look, you will see that [the `.travis.yml` file](./.travis.yml) contains a property called `secure` under `env.matrix` and that this property contains an encrypted value. This value is actually formed of an environment variable called `NOW_TOKEN`—a [Now](https://zeit.co/now) token used to deploy new instances of the website.
+If you take a look, you will see that [the `.travis.yml` file](./.travis.yml) contains a property called `secure` under `env.global` and that this property contains an encrypted value. This value is actually formed of an environment variable called `NOW_TOKEN`—a [Now](https://zeit.co/now) token used to deploy new instances of the website.
 
 This property (`secure`) is [encrypted with the help of the following command](https://docs.travis-ci.com/user/environment-variables/#Encrypting-environment-variables):
 
 ```bash
-travis encrypt NOW_TOKEN=123ABC --add env.matrix
+travis encrypt NOW_TOKEN=123ABC --add env.global
 ```
 
 The advantage of this approach is that by encrypting the Now token and the other env variables, it becomes possible to version-control them to a public repository like this one. To create this encrypted token, Travis used a public token that can be read only with a private token attached to [this repository on Travis itself](https://travis-ci.org/auth0-blog/guest-author).

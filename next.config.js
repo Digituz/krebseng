@@ -2,6 +2,10 @@ const resolve = require('resolve');
 const withCSS = require('@zeit/next-css');
 
 module.exports = withCSS({
+  publicRuntimeConfig: {
+    spacesAccessKey: process.env.SPACES_ACCESS_KEY,
+    spacesSecretKey: process.env.SPACES_SECRET_KEY,
+  },
   cssModules: false,
 
   webpack (config, options) {
@@ -36,6 +40,6 @@ module.exports = withCSS({
       })
     }
 
-    return config
+    return config;
   },
 });

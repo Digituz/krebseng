@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "next build",
-    "deploy": "now -e NODE_ENV=production -e MONGO_URL=$MONGO_URL -t $NOW_TOKEN",
-    "dev": "node server.js",
+    "deploy": "now -e NODE_ENV=production -e SPACES_SECRET_KEY=$SPACES_SECRET_KEY -e SPACES_ACCESS_KEY=$SPACES_ACCESS_KEY -e MONGO_URL=$MONGO_URL -t $NOW_TOKEN",
     "migrate": "node legacy/migrate",
     "start": "NODE_ENV=production node server.js"
   },
@@ -26,7 +25,7 @@
   },
   "homepage": "https://github.com/digituz-corp/krebseng#readme",
   "dependencies": {
-    "@digituz/react-components": "^1.4.1",
+    "@digituz/react-components": "^1.4.2",
     "@digituz/rest-flex": "^2.0.5",
     "@digituz/rest-flex-client": "^2.0.3",
     "@zeit/next-css": "^0.2.0",
