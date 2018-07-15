@@ -1,6 +1,5 @@
 import {withRouter} from 'next/router';
 import React, {Component, Fragment} from 'react';
-import Building from '../entities/Building';
 import * as Components from '@digituz/react-components';
 import withPanelTemplate from '../components/withPanelTemplate';
 import withUser from '../components/withUser';
@@ -33,25 +32,6 @@ class Panel extends Component {
   }
 
   render() {
-    const divStyle = {
-      display: 'grid',
-      gridTemplateColumns: '45px 1fr auto',
-    };
-
-    const guardedRoute = (url) => {
-      if (this.props.auth0Client.isAuthenticated()) return this.go(url);
-      Components.NotificationManager.warning('Sign in first, please.');
-    };
-
-    const submenus = [{
-      title: 'Menu',
-      items: [
-        { title: 'Buildings', color: '#66ad66', onClick: () => { guardedRoute('/buildings') } },
-      ]
-    }];
-
-    Building.url = 'http://localhost:3000/';
-
     return (
       <Fragment>
         <Components.Card className="md-6 md-pad-3" title="Krebs Engenharia">

@@ -60,7 +60,7 @@ function withPanelTemplate(WrappedComponent) {
       const submenus = [{
         title: 'Menu',
         items: [
-          { title: 'Buildings', color: '#66ad66', onClick: () => { guardedRoute('/panel/buildings') } },
+          { title: 'Empreendimentos', color: '#66ad66', onClick: () => { guardedRoute('/panel/buildings') } },
         ]
       }];
 

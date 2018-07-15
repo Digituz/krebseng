@@ -2,32 +2,44 @@
   "path": "/panel/buildings",
   "audience": "https://companies.digituz.com.br",
   "domain": "buildings",
-  "title": "Building",
-  "plural": "Buildings",
-  "description": "Create and manage buildings with ease.",
+  "title": "Empreendimento",
+  "plural": "Empreedimentos",
+  "description": "Gerencie empreendimentos com facilidade.",
   "type": "object",
   "properties": {
     "title": {
       "type": "string",
-      "label": "Building Name",
-      "placeholder": "Enter the building name.",
+      "label": "Nome",
+      "placeholder": "Insira o nome do empreendimento.",
       "max": "100"
     },
-    "completionDate": {
-      "type": "date",
-      "label": "Completion Date",
-      "placeholder": "Enter the date the building was completed."
+    "path": {
+      "type": "string",
+      "label": "URL",
+      "placeholder": "Insira a URL do empreendimento.",
+      "max": "100"
     },
     "address": {
       "type": "string",
-      "label": "Address",
-      "placeholder": "Enter the address of the company.",
+      "label": "Endereço",
+      "placeholder": "Insira o endereço do empreedimento.",
       "max": "250"
+    },
+    "neighborhood": {
+      "type": "string",
+      "label": "Bairro",
+      "placeholder": "Insira o bairro onde o empreendimento se localiza.",
+      "max": "100"
     },
     "pictures": {
       "type": "file",
-      "label": "Pictures"
+      "label": "Fotos",
+      "multiple": true
+    },
+    "folder": {
+      "type": "file",
+      "label": "Folder"
     }
   },
-  "required": ["buildingName", "completionDate", "address"]
+  "required": ["title", "path", "address", "neighborhood"]
 }
