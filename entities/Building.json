@@ -39,6 +39,10 @@
     "folder": {
       "type": "file",
       "label": "Folder"
+    },
+    "descriptiveMemorial": {
+      "type": "file",
+      "label": "Memorial Descritivo"
     }
   },
   "required": ["title", "path", "address", "neighborhood"]

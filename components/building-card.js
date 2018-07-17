@@ -27,9 +27,17 @@ const BuildingCardContainer = styled.div`
 
 
 export default function(props) {
+  const {building} = props;
+  const bucketName = 'krebseng';
+  const endpoint = 'nyc3.digitaloceanspaces.com';
+  const folderAvailable = building.folder && building.folder.length > 0;
+
+  const folderUrl = folderAvailable ?
+    `https://${bucketName}.${endpoint}/${building.folder[0].spacesName}` :
+    '';
   return (
     <BuildingCardContainer>
-      <img src={getImage(props.building)} alt={props.building.title} />
+      <img src={folderUrl} alt={building.title} />
       <h2>{props.building.title}</h2>
     </BuildingCardContainer>
   );

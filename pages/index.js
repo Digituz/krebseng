@@ -7,7 +7,7 @@ import Footer from '../components/footer';
 import Header from '../components/header';
 import Menu from '../components/menu';
 import Content from '../components/content';
-import buildings from '../data/buildings';
+import RestFlexClient from "@digituz/rest-flex-client/dist/RestFlexClient";
 
 const Buildings = styled(Content)`
   display: grid;
@@ -23,7 +23,8 @@ const Buildings = styled(Content)`
   }
 `;
 
-function index() {
+function index(props) {
+  const { buildings } = props;
   return (
     <div>
       <Header />
@@ -47,5 +48,17 @@ function index() {
     </div>
   );
 }
+
+
+index.getInitialProps = async function(context) {
+  const client = new RestFlexClient('https://krebseng.now.sh/buildings');
+  const { path } = context.query;
+  const res = await client.find({ path });
+  const buildings = await res.json();
+
+  return {
+    buildings,
+  }
+};
 
 export default index;

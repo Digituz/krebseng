@@ -6,7 +6,14 @@ import Description from '../components/description';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import Menu from '../components/menu';
-import buildings from '../data/buildings';
+
+const DescriptiveMemoLink = styled.a`
+  color: dodgerblue;
+`;
+
+const BuildingContents = styled(Content)`
+  padding-top: 0;
+`;
 
 const Carousel = styled.div`
   display: grid;
@@ -25,6 +32,19 @@ const Carousel = styled.div`
 
 const Building = (props) => {
   const { building } = props;
+  const bucketName = 'krebseng';
+  const endpoint = 'nyc3.digitaloceanspaces.com';
+
+  const descriptiveMemorialAvailable = building.descriptiveMemorial && building.descriptiveMemorial.length > 0;
+
+  const descriptiveMemorialUrl = descriptiveMemorialAvailable ?
+    `https://${bucketName}.${endpoint}/${building.descriptiveMemorial[0].spacesName}` :
+    '';
+
+  let pictures = [];
+  if (building.folder && building.folder.length > 0) pictures.push(building.folder[0]);
+  if (building.pictures && building.pictures.length > 0) pictures = pictures.concat(building.pictures);
+
   return (
     <div>
       <Header />
@@ -33,15 +53,31 @@ const Building = (props) => {
         <h1>{building.title}</h1>
         <p>{building.address}</p>
       </Description>
-      <Content>
-        <Carousel>
-          <img src="http://www.krebseng.com.br/painel/include/arquivos/10/fotos/20110111175854.jpg"/>
-          <img src="http://www.krebseng.com.br/painel/include/arquivos/10/fotos/20110111175907.jpg"/>
-          <img src="http://www.krebseng.com.br/painel/include/arquivos/10/fotos/20110111175912.jpg"/>
-          <img src="http://www.krebseng.com.br/painel/include/arquivos/10/fotos/20110111175915.jpg"/>
-          <img src="http://www.krebseng.com.br/painel/include/arquivos/10/fotos/20110120120116.jpg"/>
-        </Carousel>
-      </Content>
+      <BuildingContents>
+        {
+          descriptiveMemorialAvailable &&
+          <p>
+            <DescriptiveMemoLink href={descriptiveMemorialUrl} target="_blank">
+              Clique aqui para baixar o memorial descritivo.
+            </DescriptiveMemoLink>
+          </p>
+        }
+        <h2>Fotos</h2>
+        {
+          pictures.length === 0 && <p>Por enquanto não há fotos publicadas.</p>
+        }
+        {
+          pictures && pictures.length > 0 &&
+          <Carousel>
+            {
+              pictures.map((picture, idx) => {
+                const url = `https://${bucketName}.${endpoint}/${picture.spacesName}`;
+                return <img key={idx} src={url} />;
+              })
+            }
+          </Carousel>
+        }
+      </BuildingContents>
       <Footer />
     </div>
   );
