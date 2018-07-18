@@ -50,7 +50,7 @@ app.prepare().then(() => {
     const {name, phone, email, mensagem} = ctx.request.body;
 
     const msg = {
-      to: 'bruno.krebs@digituz.com.br,bruno@krebseng.com.br',
+      to: ['bruno.krebs@digituz.com.br', 'kira@krebseng.com.br'],
       from: 'bruno.krebs@digituz.com.br',
       replyTo: email,
       subject: 'Contato através do site',
