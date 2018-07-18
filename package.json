@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "next build",
-    "deploy": "now -e NODE_ENV=production -e SPACES_SECRET_KEY=$SPACES_SECRET_KEY -e SPACES_ACCESS_KEY=$SPACES_ACCESS_KEY -e MONGO_URL=$MONGO_URL -t $NOW_TOKEN",
+    "deploy": "now -e NODE_ENV=production -e SENDGRID_API_KEY=$SENDGRID_API_KEY -e SPACES_SECRET_KEY=$SPACES_SECRET_KEY -e SPACES_ACCESS_KEY=$SPACES_ACCESS_KEY -e MONGO_URL=$MONGO_URL -t $NOW_TOKEN",
     "migrate": "node legacy/migrate",
     "start": "NODE_ENV=production node server.js"
   },
