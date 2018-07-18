@@ -31,6 +31,10 @@
       "placeholder": "Insira o bairro onde o empreendimento se localiza.",
       "max": "100"
     },
+    "mainPicture": {
+      "type": "file",
+      "label": "Foto Principal"
+    },
     "pictures": {
       "type": "file",
       "label": "Fotos",

@@ -30,11 +30,11 @@ export default function(props) {
   const {building} = props;
   const bucketName = 'krebseng';
   const endpoint = 'nyc3.digitaloceanspaces.com';
-  const folderAvailable = building.folder && building.folder.length > 0;
+  const folderAvailable = building.mainPicture && building.mainPicture.length > 0;
 
   const folderUrl = folderAvailable ?
-    `https://${bucketName}.${endpoint}/${building.folder[0].spacesName}` :
-    '';
+    `https://${bucketName}.${endpoint}/${building.mainPicture[0].spacesName}` :
+    '/static/images/building-icon.png';
   return (
     <BuildingCardContainer>
       <img src={folderUrl} alt={building.title} />

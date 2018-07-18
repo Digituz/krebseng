@@ -42,7 +42,7 @@ const Building = (props) => {
     '';
 
   let pictures = [];
-  if (building.folder && building.folder.length > 0) pictures.push(building.folder[0]);
+  if (building.mainPicture && building.mainPicture.length > 0) pictures.push(building.mainPicture[0]);
   if (building.pictures && building.pictures.length > 0) pictures = pictures.concat(building.pictures);
 
   return (
