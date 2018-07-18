@@ -31,7 +31,7 @@ export default function() {
         <ul>
           <li><Link href="/">Início</Link></li>
           <li><Link href="/empreendimentos">Empreendimentos</Link></li>
-          <li><Link href="/">Contato</Link></li>
+          <li><Link href="/contato">Contato</Link></li>
         </ul>
       </ContentMenu>
     </Menu>
