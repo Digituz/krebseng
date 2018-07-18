@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch';
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import Description from '../components/description';
@@ -69,7 +70,7 @@ class Contato extends Component {
     this.updateMensagem = this.updateMensagem.bind(this);
   }
 
-  sendEmail() {
+  async sendEmail() {
     const {name, phone, email, mensagem} = this.state;
 
     if (name.trim().length === 0) {
@@ -84,6 +85,20 @@ class Contato extends Component {
     if (mensagem.trim().length <= 10) {
       return Components.NotificationManager.warning('Por favor, digite a sua mensagem (min. 10 caracteres).', 'Ooops');
     }
+
+    await fetch('/send-email', {
+      method: 'POST',
+      headers: {
+        ...this.headers,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        phone,
+        email,
+        mensagem,
+      }),
+    });
 
     this.setState({
       emailSent: true,

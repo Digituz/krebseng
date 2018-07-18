@@ -1,12 +1,16 @@
+const bodyParser = require('koa-bodyparser');
 const Koa = require('koa');
 const next = require('next');
 const Router = require('koa-router');
 const GenericRouter  = require('@digituz/rest-flex');
 const cors = require('kcors');
+const sgMail = require('@sendgrid/mail');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.prepare().then(() => {
   const server = new Koa();
@@ -38,6 +42,21 @@ app.prepare().then(() => {
     await app.render(ctx.req, ctx.res, actualPage, queryParams);
     ctx.res.statusCode = 200;
     ctx.respond = false;
+  });
+
+  router.use('/send-email', bodyParser());
+
+  router.post('/send-email', async ctx => {
+    const {name, phone, email, mensagem} = ctx.request.body;
+
+    const msg = {
+      to: 'bruno.krebs@digituz.com.br,bruno@krebseng.com.br',
+      from: 'bruno.krebs@digituz.com.br',
+      replyTo: email,
+      subject: 'Contato através do site',
+      text: `Nome informado: ${name}\n\nTelefone informado: ${phone}\n\nEmail informado: ${email}\n\nMensagem:\n${mensagem}`,
+    };
+    sgMail.send(msg);
   });
 
   router.get('*', async ctx => {
