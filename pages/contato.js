@@ -151,7 +151,7 @@ class Contato extends Component {
           <input disabled={this.state.emailSent} id="phone" type="text" onChange={this.updatePhone} value={this.state.phone} />
           <label htmlFor="email">Email:</label>
           <input disabled={this.state.emailSent} id="email" type="text" onChange={this.updateEmail} value={this.state.email} />
-          <label htmlFor="mensagem">Email:</label>
+          <label htmlFor="mensagem">Mensagem:</label>
           <textarea disabled={this.state.emailSent} name="mensagem" id="mensagem" onChange={this.updateMensagem} value={this.state.mensagem} />
           <button disabled={this.state.emailSent} onClick={this.sendEmail}>Enviar</button>
         </ContatoContainer>
