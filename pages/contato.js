@@ -70,6 +70,12 @@ class Contato extends Component {
     this.updateMensagem = this.updateMensagem.bind(this);
   }
 
+  static validateEmail(email) {
+    if (!email || email.trim().length === 0) return false;
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
   async sendEmail() {
     const {name, phone, email, mensagem} = this.state;
 
@@ -77,9 +83,8 @@ class Contato extends Component {
       return Components.NotificationManager.warning('Por favor, informe o seu nome.', 'Ooops');
     }
 
-    const emailOrPhone = phone.trim().length > 0 || email.trim().length > 0;
-    if (!emailOrPhone) {
-      return Components.NotificationManager.warning('Por favor, informe um email ou telefone para contato.', 'Ooops');
+    if (!Contato.validateEmail(email)) {
+      return Components.NotificationManager.warning('Por favor, informe um email válido.', 'Ooops');
     }
 
     if (mensagem.trim().length <= 10) {
@@ -94,7 +99,7 @@ class Contato extends Component {
       },
       body: JSON.stringify({
         name,
-        phone,
+        phone: phone || '',
         email,
         mensagem,
       }),
