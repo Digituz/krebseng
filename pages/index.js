@@ -64,8 +64,7 @@ function index(props) {
 
 index.getInitialProps = async function(context) {
   const client = new RestFlexClient('https://krebseng.now.sh/buildings');
-  const { path } = context.query;
-  const res = await client.find({ path });
+  const res = await client.find({ path: { $eq: 'villa-dei-fiori' } });
   const buildings = await res.json();
 
   return {
