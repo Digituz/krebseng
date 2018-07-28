@@ -19,6 +19,12 @@
       "placeholder": "Insira a URL do empreendimento.",
       "max": "100"
     },
+    "date": {
+      "type": "date",
+      "format": "date",
+      "label": "Data de Finalização",
+      "placeholder": "Data de finalização da obra."
+    },
     "address": {
       "type": "string",
       "label": "Endereço",

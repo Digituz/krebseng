@@ -9,7 +9,7 @@ import withUser from '../../components/withUser';
 const {spacesAccessKey, spacesSecretKey} = getConfig().publicRuntimeConfig;
 
 const Buildings = (props) => {
-  const tableColumns = ['title'];
+  const tableColumns = ['title', 'date'];
   Building.url = `${config.domain}/buildings`;
 
   const navigate = (path, id) => {
