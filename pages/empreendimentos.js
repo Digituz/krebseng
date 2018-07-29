@@ -52,9 +52,17 @@ function empreendimentos(props) {
 
 empreendimentos.getInitialProps = async function(context) {
   const client = new RestFlexClient('https://krebseng.now.sh/buildings');
-  const { path } = context.query;
-  const res = await client.find({ path });
+  const res = await client.find();
   const buildings = await res.json();
+  buildings.sort((b1, b2) => {
+    if (!b1.date) return false;
+    if (!b2.date) return true;
+
+    const b1Time = (new Date(b1.date)).getTime();
+    const b2Time = (new Date(b2.date)).getTime();
+
+    return b1Time < b2Time;
+  });
 
   return {
     buildings,
