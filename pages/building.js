@@ -17,6 +17,24 @@ const BuildingContents = styled(Content)`
   padding-top: 0;
 `;
 
+const GoogleMapsLink = styled.a`
+  cursor: pointer;
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  margin-bottom: 10px;
+`;
+
+const AddressLabel = styled.label`
+  margin-top: 5px;
+  cursor: pointer;
+`;
+
+const MapsIcon = styled.img`
+  width: 25px;
+  margin-left: 5px;
+  cursor: pointer;
+`;
+
 const ModalContents = styled.div`
   position: fixed;
   top: 0;
@@ -109,7 +127,10 @@ class Building extends Component {
         <Menu />
         <Description>
           <h1>{building.title}</h1>
-          <p>{building.address}</p>
+          <GoogleMapsLink target="_blank" href={`https://www.google.com/maps/place/${building.address},${building.neighborhood},Porto Alegre`}>
+            <AddressLabel>{building.address} - {building.neighborhood}</AddressLabel>
+            <MapsIcon className="maps-icon" src="/static/maps-red-icon.png" alt="Link para o Google Maps"/>
+          </GoogleMapsLink>
         </Description>
         <BuildingContents>
           {
