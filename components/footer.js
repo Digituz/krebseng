@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Content from './content';
+import Link from './link';
 
 const FooterContainer = styled.section`
   background-color: #ddd;
@@ -37,9 +38,9 @@ export default function() {
     <FooterContainer>
       <Footer>
         <ul>
-          <li>Início</li>
-          <li>Empreendimentos</li>
-          <li>Contato</li>
+          <li><Link href="/">Início</Link></li>
+          <li><Link href="/empreendimentos">Empreendimentos</Link></li>
+          <li><Link href="/contato">Contato</Link></li>
         </ul>
         <ul>
           <li>Rua Souza Lobo 666, Vila Jardim</li>

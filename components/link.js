@@ -1,4 +1,13 @@
 import {withRouter} from 'next/router'
+import styled from 'styled-components';
+
+const A = styled.a`
+  text-decoration: none;
+  
+  :focus {
+    color: #ccc;
+  }
+`;
 
 const Link = ({children, router, href}) => {
   const style = {
@@ -11,9 +20,9 @@ const Link = ({children, router, href}) => {
   };
 
   return (
-    <a href={href} onClick={handleClick} style={style}>
+    <A href={href} onClick={handleClick} style={style}>
       {children}
-    </a>
+    </A>
   );
 };
 
