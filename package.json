@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "next build",
-    "deploy": "now -e NODE_ENV=production -e SENDGRID_API_KEY=$SENDGRID_API_KEY -e SPACES_SECRET_KEY=$SPACES_SECRET_KEY -e SPACES_ACCESS_KEY=$SPACES_ACCESS_KEY -e MONGO_URL=$MONGO_URL -t $NOW_TOKEN",
+    "docker:build": "docker build -t brunokrebs/krebseng-site .",
+    "docker:clean": "docker rm -f krebseng-site || true",
+    "docker:run": "docker run -p 7878:3000 -d --name krebseng-site brunokrebs/krebseng-site && npm run docker:logs",
+    "docker:stop": "docker stop krebseng-site",
+    "docker:start": "docker start krebseng-site && npm run docker:logs",
+    "docker:logs": "docker logs -f krebseng-site",
+    "deploy": "npm run docker:build && npm run docker:clean && npm run docker:run",
     "migrate": "node legacy/migrate",
     "start": "NODE_ENV=production node server.js"
   },
