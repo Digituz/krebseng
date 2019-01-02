@@ -51,7 +51,7 @@ function empreendimentos(props) {
 
 
 empreendimentos.getInitialProps = async function(context) {
-  const client = new RestFlexClient('https://krebseng.now.sh/buildings');
+  const client = new RestFlexClient('https://krebseng.com.br/buildings');
   const res = await client.find();
   const buildings = await res.json();
   buildings.sort((b1, b2) => {

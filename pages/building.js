@@ -90,7 +90,7 @@ class Building extends Component {
   }
 
   static async getInitialProps({query}) {
-    const client = new RestFlexClient('https://krebseng.now.sh/buildings');
+    const client = new RestFlexClient('https://krebseng.com.br/buildings');
     const { path } = query;
     const res = await client.find({ path });
     const buildings = await res.json();

@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: krebseng-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: krebseng-app
+    spec:
+      containers:
+        - image: digituz/krebseng
+          name: krebseng-app
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: SPACES_ACCESS_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: krebseng-config
+                  key: do-spaces.access-key
+            - name: SPACES_SECRET_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: krebseng-config
+                  key: do-spaces.secret-key
+            - name: SENDGRID_API_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: krebseng-config
+                  key: sendgrid.api-key
+            - name: MONGO_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: krebseng-config
+                  key: mlab.url

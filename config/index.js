@@ -3,7 +3,7 @@ const devConfig = {
 };
 
 const prodConfig = {
-  domain: 'https://www.krebseng.com.br',
+  domain: 'https://krebseng.com.br',
 };
 
 const config = process.env.NODE_ENV === 'production' ? prodConfig : devConfig;

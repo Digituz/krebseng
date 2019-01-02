@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: krebseng-app
+  annotations:
+    getambassador.io/config: |
+      ---
+      apiVersion: ambassador/v0
+      kind:  Mapping
+      name:  krebseng-app-mapping
+      prefix: /
+      service: krebseng-app
+spec:
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
+  selector:
+    app: krebseng-app
