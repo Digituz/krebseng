@@ -1,13 +1,13 @@
 Create database and create user:
 
 ```bash
-k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@localhost/ --eval "db.getSiblingDB('preprova').createUser({user: 'mg-db-user', pwd: 'd1g1tuz45BK', roles: ['readWrite']}, {w: 'majority', wtimeout: 5000});"
+k exec mongo-594c4bdcc7-9ggcc -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@localhost/ --eval "db.getSiblingDB('digituz').createUser({user: 'mg-db-user', pwd: 'd1g1tuz45BK', roles: ['readWrite']}, {w: 'majority', wtimeout: 5000});"
 ```
 
 Insert documents:
 
 ```bash
-k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@localhost/digituz --eval 'db.buildings.insert({
+k exec mongo-594c4bdcc7-9ggcc -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@localhost/digituz --eval 'db.buildings.insert({
     "id": 15,
     "title": "Villaggio Sorrento",
     "path": "villagio-sorrento",
@@ -17,7 +17,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     "pictures": [
         {
             "name": "20110120120116.jpg",
-            "spacesName": "1531840039487/20110120120116.jpg",
+            "spacesName": "20110120120116.jpg",
             "type": "image/jpeg",
             "size": 48054,
             "lastModified": 1528551817359,
@@ -26,7 +26,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
         },
         {
             "name": "20110111175915.jpg",
-            "spacesName": "1531840039487/20110111175915.jpg",
+            "spacesName": "20110111175915.jpg",
             "type": "image/jpeg",
             "size": 98580,
             "lastModified": 1528551817359,
@@ -35,7 +35,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
         },
         {
             "name": "20110111175912.jpg",
-            "spacesName": "1531840039487/20110111175912.jpg",
+            "spacesName": "20110111175912.jpg",
             "type": "image/jpeg",
             "size": 151785,
             "lastModified": 1528551817358,
@@ -44,7 +44,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
         },
         {
             "name": "20110111175907.jpg",
-            "spacesName": "1531840039487/20110111175907.jpg",
+            "spacesName": "20110111175907.jpg",
             "type": "image/jpeg",
             "size": 85987,
             "lastModified": 1528551817357,
@@ -53,7 +53,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
         },
         {
             "name": "20110111175854.jpg",
-            "spacesName": "1531840039487/20110111175854.jpg",
+            "spacesName": "20110111175854.jpg",
             "type": "image/jpeg",
             "size": 114217,
             "lastModified": 1528551817356,
@@ -64,7 +64,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     "descriptiveMemorial": [
         {
             "name": "memorial.pdf",
-            "spacesName": "1531840054845/memorial.pdf",
+            "spacesName": "memorial.pdf",
             "type": "application/pdf",
             "size": 35111,
             "lastModified": 1528551817360,
@@ -76,7 +76,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     "folder": [
         {
             "name": "volante villaggio sorrento_frente.jpg",
-            "spacesName": "1531870940538/volante villaggio sorrento_frente.jpg",
+            "spacesName": "volante villaggio sorrento_frente.jpg",
             "type": "image/jpeg",
             "size": 327524,
             "lastModified": 1531870923083,
@@ -87,7 +87,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     "mainPicture": [
         {
             "name": "20140416173752.jpg",
-            "spacesName": "1531871497414/20140416173752.jpg",
+            "spacesName": "20140416173752.jpg",
             "type": "image/jpeg",
             "size": 264497,
             "lastModified": 1531871483814,
@@ -99,7 +99,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     "date": "2014-01-01T02:00:00.000Z"
 })'
 
-k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@localhost/digituz --eval 'db.buildings.insert({
+k exec mongo-594c4bdcc7-9ggcc -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@localhost/digituz --eval 'db.buildings.insert({
     "title": "Villa Ravenna",
     "path": "villa-ravenna",
     "address": "Rua São Simão 99",
@@ -107,7 +107,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     "pictures": [
         {
             "name": "20140416181232.jpg",
-            "spacesName": "1531840235115/20140416181232.jpg",
+            "spacesName": "20140416181232.jpg",
             "type": "image/jpeg",
             "size": 125093,
             "lastModified": 1528551817419,
@@ -116,7 +116,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
         },
         {
             "name": "20140416181226.jpg",
-            "spacesName": "1531840235115/20140416181226.jpg",
+            "spacesName": "20140416181226.jpg",
             "type": "image/jpeg",
             "size": 119879,
             "lastModified": 1528551817418,
@@ -125,7 +125,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
         },
         {
             "name": "20140416181215.jpg",
-            "spacesName": "1531840235115/20140416181215.jpg",
+            "spacesName": "20140416181215.jpg",
             "type": "image/jpeg",
             "size": 178367,
             "lastModified": 1528551817417,
@@ -134,7 +134,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
         },
         {
             "name": "20140416181208.jpg",
-            "spacesName": "1531840235115/20140416181208.jpg",
+            "spacesName": "20140416181208.jpg",
             "type": "image/jpeg",
             "size": 185285,
             "lastModified": 1528551817416,
@@ -143,7 +143,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
         },
         {
             "name": "20140416181200.jpg",
-            "spacesName": "1531840235115/20140416181200.jpg",
+            "spacesName": "20140416181200.jpg",
             "type": "image/jpeg",
             "size": 129486,
             "lastModified": 1528551817415,
@@ -152,7 +152,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
         },
         {
             "name": "20140416181152.jpg",
-            "spacesName": "1531840235115/20140416181152.jpg",
+            "spacesName": "20140416181152.jpg",
             "type": "image/jpeg",
             "size": 76210,
             "lastModified": 1528551817414,
@@ -161,7 +161,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
         },
         {
             "name": "20140416181144.jpg",
-            "spacesName": "1531840235115/20140416181144.jpg",
+            "spacesName": "20140416181144.jpg",
             "type": "image/jpeg",
             "size": 88347,
             "lastModified": 1528551817413,
@@ -172,7 +172,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     "folder": [
         {
             "name": "folder.jpg",
-            "spacesName": "1531840248173/folder.jpg",
+            "spacesName": "folder.jpg",
             "type": "image/jpeg",
             "size": 200107,
             "lastModified": 1528551817412,
@@ -183,7 +183,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     "descriptiveMemorial": [
         {
             "name": "memorial.pdf",
-            "spacesName": "1531840257456/memorial.pdf",
+            "spacesName": "memorial.pdf",
             "type": "application/pdf",
             "size": 85097,
             "lastModified": 1528551817420,
@@ -194,7 +194,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     "mainPicture": [
         {
             "name": "folder.jpg",
-            "spacesName": "1531871580259/folder.jpg",
+            "spacesName": "folder.jpg",
             "type": "image/jpeg",
             "size": 200107,
             "lastModified": 1528551817412,
@@ -205,7 +205,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     "date": "2016-01-01T02:00:00.000Z"
 })'
 
-k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@localhost/digituz --eval 'db.buildings.insert({
+k exec mongo-594c4bdcc7-9ggcc -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@localhost/digituz --eval 'db.buildings.insert({
 "title": "Villa Dei Fiori",
 "path": "villa-dei-fiori",
 "address": "Rua Cândido Silveira 160",
@@ -213,7 +213,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
 "mainPicture": [
     {
         "name": "Candido Silveira.jpg",
-        "spacesName": "1532345904866/Candido Silveira.jpg",
+        "spacesName": "Candido Silveira.jpg",
         "type": "image/jpeg",
         "size": 726662,
         "lastModified": 1532345840562,
@@ -224,7 +224,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
 "pictures": [
     {
         "name": "tipo2.jpg",
-        "spacesName": "1532345949712/tipo2.jpg",
+        "spacesName": "tipo2.jpg",
         "type": "image/jpeg",
         "size": 203063,
         "lastModified": 1532345837595,
@@ -233,7 +233,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     },
     {
         "name": "tipo1.jpg",
-        "spacesName": "1532345949712/tipo1.jpg",
+        "spacesName": "tipo1.jpg",
         "type": "image/jpeg",
         "size": 197279,
         "lastModified": 1532345836070,
@@ -242,7 +242,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     },
     {
         "name": "térreo.jpg",
-        "spacesName": "1532345949712/térreo.jpg",
+        "spacesName": "térreo.jpg",
         "type": "image/jpeg",
         "size": 156526,
         "lastModified": 1532345834439,
@@ -251,7 +251,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     },
     {
         "name": "subsolo.jpg",
-        "spacesName": "1532345949712/subsolo.jpg",
+        "spacesName": "subsolo.jpg",
         "type": "image/jpeg",
         "size": 128684,
         "lastModified": 1532345833100,
@@ -260,7 +260,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     },
     {
         "name": "apto 1503.jpg",
-        "spacesName": "1532345949712/apto 1503.jpg",
+        "spacesName": "apto 1503.jpg",
         "type": "image/jpeg",
         "size": 118776,
         "lastModified": 1532345825713,
@@ -269,7 +269,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     },
     {
         "name": "apto 1502.jpg",
-        "spacesName": "1532345949712/apto 1502.jpg",
+        "spacesName": "apto 1502.jpg",
         "type": "image/jpeg",
         "size": 120491,
         "lastModified": 1532345823993,
@@ -278,7 +278,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     },
     {
         "name": "apto 1501.jpg",
-        "spacesName": "1532345949712/apto 1501.jpg",
+        "spacesName": "apto 1501.jpg",
         "type": "image/jpeg",
         "size": 126929,
         "lastModified": 1532345822592,
@@ -287,7 +287,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     },
     {
         "name": "apto 301.jpg",
-        "spacesName": "1532345949712/apto 301.jpg",
+        "spacesName": "apto 301.jpg",
         "type": "image/jpeg",
         "size": 158301,
         "lastModified": 1532345820993,
@@ -296,7 +296,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
     },
     {
         "name": "2º pvto.jpg",
-        "spacesName": "1532345949712/2º pvto.jpg",
+        "spacesName": "2º pvto.jpg",
         "type": "image/jpeg",
         "size": 231741,
         "lastModified": 1532345820012,
@@ -307,7 +307,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
 "folder": [
     {
         "name": "CAPA SITE.jpg",
-        "spacesName": "1532345963302/CAPA SITE.jpg",
+        "spacesName": "CAPA SITE.jpg",
         "type": "image/jpeg",
         "size": 139466,
         "lastModified": 1532345817655,
@@ -318,7 +318,7 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
 "descriptiveMemorial": [
     {
         "name": "Memorial Descritivo CS.pdf",
-        "spacesName": "1532345969472/Memorial Descritivo CS.pdf",
+        "spacesName": "Memorial Descritivo CS.pdf",
         "type": "application/pdf",
         "size": 286928,
         "lastModified": 1532345847619,
@@ -332,5 +332,5 @@ k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@l
 Show all documents:
 
 ```bash
-k exec mongo-594c4bdcc7-gksz2 -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@localhost/digituz --eval "db.buildings.find({})"
+k exec mongo-594c4bdcc7-9ggcc -- mongo --host mongodb://mg-db-user:d1g1tuz45BK@localhost/digituz --eval "db.buildings.find({})"
 ```

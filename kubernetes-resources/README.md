@@ -4,15 +4,15 @@ First, you will have to create a configmap:
 
 ```bash
 kubectl create configmap mongo-config \
-  --from-literal=mongo.root-username=... \
-  --from-literal=mongo.root-password=... \
-  --from-literal=mongo.database=...
+  --from-literal=mongo.root-username=mg-db-user \
+  --from-literal=mongo.root-password=d1g1tuz45BK \
+  --from-literal=mongo.database=digituz
 
 kubectl create configmap krebseng-config \
-  --from-literal=do-spaces.access-key=... \
-  --from-literal=do-spaces.secret-key=... \
-  --from-literal=sendgrid.api-key=... \
-  --from-literal=mlab.url="mongodb://...:...@mongo.default:27017/..."
+  --from-literal=do-spaces.access-key=BTZ2LGQRUVB6NFJZHGRO \
+  --from-literal=do-spaces.secret-key=tUKbzz6oCz0m/8yJXHvzONYTwDObS2FaccvMOSoQBlc \
+  --from-literal=sendgrid.api-key=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 \
+  --from-literal=mlab.url="mongodb://mg-db-user:d1g1tuz45BK@mongo.default:27017/digituz"
 ``` 
 
 After creating the configmap, you will have to install the NGINX Ingress Controller:
