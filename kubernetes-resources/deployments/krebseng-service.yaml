@@ -1,3 +1,4 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -9,6 +10,7 @@ metadata:
       kind:  Mapping
       name:  krebseng-app-mapping
       prefix: /
+      host: krebseng.com.br
       service: krebseng-app
 spec:
   ports:
