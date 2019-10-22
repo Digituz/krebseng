@@ -35,8 +35,8 @@ const MainFolder = styled(Content)`
 
 function index(props) {
   const { building } = props;
-  const bucketName = 'digituz';
-  const endpoint = 'sfo2.cdn.digitaloceanspaces.com';
+  const bucketName = 'frida';
+  const endpoint = 'nyc3.cdn.digitaloceanspaces.com';
 
   const folder = `https://${bucketName}.${endpoint}/${building.folder[0].spacesName}`;
 
