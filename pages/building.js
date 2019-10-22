@@ -117,7 +117,7 @@ class Building extends Component {
   render() {
     const { building } = this.props;
     const bucketName = 'digituz';
-    const endpoint = 'sfo2.cdn.digitaloceanspaces.com';
+    const endpoint = 'nyc3.digitaloceanspaces.com';
 
     const descriptiveMemorialAvailable = building.descriptiveMemorial && building.descriptiveMemorial.length > 0;
 
