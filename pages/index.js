@@ -38,7 +38,7 @@ function index(props) {
   const bucketName = 'frida';
   const endpoint = 'nyc3.digitaloceanspaces.com';
 
-  const folder = `https://${bucketName}.${endpoint}/krebseng/${building.folder[0].spacesName}`;
+  const folder = `https://${bucketName}.${endpoint}/krebseng-koa/${building.folder[0].spacesName}`;
 
   return (
     <div>
