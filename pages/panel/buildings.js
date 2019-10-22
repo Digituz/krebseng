@@ -19,7 +19,7 @@ const Buildings = (props) => {
 
   const fileManagerConfig = {
     accessKeyId: spacesAccessKey,
-    bucketName: 'digituz',
+    bucketName: 'frida',
     endpoint: 'nyc3.digitaloceanspaces.com',
     secretAccessKey: spacesSecretKey,
   };

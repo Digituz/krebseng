@@ -28,7 +28,7 @@ const BuildingCardContainer = styled.div`
 
 export default function(props) {
   const {building} = props;
-  const bucketName = 'digituz';
+  const bucketName = 'frida';
   const endpoint = 'nyc3.digitaloceanspaces.com';
   const folderAvailable = building.mainPicture && building.mainPicture.length > 0;
 
