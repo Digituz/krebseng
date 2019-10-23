@@ -33,7 +33,7 @@ export default function(props) {
   const folderAvailable = building.mainPicture && building.mainPicture.length > 0;
 
   const folderUrl = folderAvailable ?
-    `https://${bucketName}.${endpoint}/${building.mainPicture[0].spacesName}` :
+    `https://${bucketName}.${endpoint}/krebseng-koa/${building.mainPicture[0].spacesName}` :
     '/static/images/building-icon.png';
   return (
     <BuildingCardContainer>

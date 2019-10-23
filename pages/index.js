@@ -40,10 +40,6 @@ function index(props) {
 
   const folder = `https://${bucketName}.${endpoint}/krebseng-koa/${building.folder[0].spacesName}`;
 
-  console.log('=======================');
-  console.log(folder);
-  console.log('=======================');
-
   return (
     <div>
       <Header />

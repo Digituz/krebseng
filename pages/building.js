@@ -122,7 +122,7 @@ class Building extends Component {
     const descriptiveMemorialAvailable = building.descriptiveMemorial && building.descriptiveMemorial.length > 0;
 
     const descriptiveMemorialUrl = descriptiveMemorialAvailable ?
-      `https://${bucketName}.${endpoint}/${building.descriptiveMemorial[0].spacesName}` :
+      `https://${bucketName}.${endpoint}/krebseng-koa/${building.descriptiveMemorial[0].spacesName}` :
       '';
 
     let pictures = [];
