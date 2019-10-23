@@ -158,7 +158,7 @@ class Building extends Component {
             <Carousel>
               {
                 pictures.map((picture, idx) => {
-                  const url = `https://${bucketName}.${endpoint}/${picture.spacesName}`;
+                  const url = `https://${bucketName}.${endpoint}/krebseng-koa/${picture.spacesName}`;
                   return <img key={idx} src={url} onClick={() => (this.showModal(url))} />;
                 })
               }
